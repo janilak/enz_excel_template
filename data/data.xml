@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="excelcontactxlax" model="excel.formate.list">
+            <field name="name">enz_excel_template.contactxlsx</field>
+            <field name="list_length">14</field>
+        </record>
+        <record id="excelproductxlsx" model="excel.formate.list">
+            <field name="name">enz_excel_template.productxlsx</field>
+            <field name="list_length">14</field>
+        </record>
+        <record id="excelinvoicexlsx" model="excel.formate.list">
+            <field name="name">enz_excel_template.invoicexlsx</field>
+            <field name="list_length">15</field>
+        </record>
+        <record id="exceljournalxlsx" model="excel.formate.list">
+            <field name="name">enz_excel_template.accountmovexlsx</field>
+            <field name="list_length">22</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="excel_formate_treeview" model="ir.ui.view">
+        <field name="name">excel.formate.list.form</field>
+        <field name="model">excel.formate.list</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" required="1"/>
+                <field name="list_length"/>
+            </tree>
+        </field>
+    </record>
+    <record id="excel_formate_formview" model="ir.ui.view">
+        <field name="name">excel.formate.list.form</field>
+        <field name="model">excel.formate.list</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="list_length" required="1" invisible="1"/>
+                        </group>
+                        <group>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Excel Fields">
+                            <field name="field_lines">
+                                <tree editable="bottom">
+                                    <field name="field_id"/>
+                                    <field name="excel_name"/>
+                                    <field name="field_type"/>
+                                    <field name="manyonename" attrs="{'required':[('field_type','=','many2one')]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="excel_formate_action" model="ir.actions.act_window">
+        <field name="name">Excel Formate</field>
+        <field name="res_model">excel.formate.list</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                NO Excel Formate!
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="excel_formate_menu" parent="account.account_account_menu"
+              action="excel_formate_action"
+              sequence="1" name="Excel Fromate"/>
+
+</odoo>
