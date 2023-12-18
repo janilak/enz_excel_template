@@ -17,7 +17,7 @@ class ProductXlsx(models.AbstractModel):
                       'Control Policy', 'Re-Invoice Expenses', 'Product Category']
         length = 14
         if product_field:
-            length = product_field.list_length
+            length = length + len(product_field.field_lines)
             label_list = label_list + product_field.field_lines.mapped('excel_name')
         for line in range(0, length):
             sheet.write(0, line, label_list[line], bold)
